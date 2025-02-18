@@ -55,25 +55,27 @@ export class MyComboComponent {
 		this.parent.my_message = e.target.value;
         switch (e.target.value) {
             case 'Finnair':
-                this.curr_bild = 'logo_ay.png';
+                this.curr_bild = '/assets/images/logo_ay.png';
                 this.rowData  = [
                     { make: "Volvo", model: "XC 60", price: 64000, electric: false },
                     { make: "Volvo", model: "XE 90", price: 33000, electric: true },
                 ];
                 break;
             case 'KLM':
-                this.curr_bild = 'logo_klm.png';
+                this.curr_bild = '/assets/images/logo_klm.png';
                 this.rowData  = [
                     { make: "Toyota", model: "Corolla", price: 29600, electric: false },
                     { make: "Mercedes", model: "EQA", price: 48890, electric: true },
                 ];                
                 break;
             default:
-                this.curr_bild = 'logo_af.png';
+                this.curr_bild = '/assets/images/logo_af.png';
                 this.rowData  = this.iniData;
         }
-        this.parent.logo_bild = this.curr_bild;
+        this.parent.profileService.getTestAccounts().subscribe(
+            val => { this.parent.profiles = val})
 
+        this.parent.logo_bild = this.curr_bild;
 
 
    }

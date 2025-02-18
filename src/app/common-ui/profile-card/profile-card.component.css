@@ -1,0 +1,12 @@
+.profile-card {
+    width: 300px;
+    height: auto;
+    background-color: bisque;
+    text-align: center;
+    padding: 5px;
+    justify-content: center;
+    border: 2px solid var(--french-violet);
+}
+#profile_bild {
+    margin: auto;
+}
